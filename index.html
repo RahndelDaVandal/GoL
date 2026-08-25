@@ -281,7 +281,7 @@
   <script>
   (function(){
     var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
-    var RT_TIMING = {"snapshots2": {"windows": {"total": null, "work": null}}, "builds": {"windows": {"total": 32.0, "work": null}}};
+    var RT_TIMING = {"snapshots2": {"windows": {"total": 927.0, "work": null}}, "builds": {"windows": {"total": 32.0, "work": null}}};
     var REPO = "RahndelDaVandal/GoL";
     var BRANCH = "main";
     var TOK_KEY = "lvci_dispatch_token";
@@ -1304,8 +1304,8 @@
     // activities to queue. Reuses dispatchCells (oldest-first, snapshots as one
     // backfill) + the same token and optimistic-queued bridge as every other
     // dispatch on the dashboard.
-    var HIST = [{"sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2", "short": "450bd12", "msg": "Initial commit: Game of Life LabVIEW project + MIT license", "dep_only": false, "snapshots2": {"windows": {"have": 0, "total": 10}, "linux": {"have": 0, "total": 10}}}];                        // [{sha, short, msg}] newest-first (project revisions)
-    var RAN = {};                     // {cap:1} caps with a result/active run somewhere in history
+    var HIST = [{"sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2", "short": "450bd12", "msg": "Initial commit: Game of Life LabVIEW project + MIT license", "dep_only": false, "snapshots2": {"windows": {"have": 10, "total": 10}, "linux": {"have": 0, "total": 10}}}];                        // [{sha, short, msg}] newest-first (project revisions)
+    var RAN = {"snapshots2": 1};                     // {cap:1} caps with a result/active run somewhere in history
     var CAP_META = {                            // label + sub for each known capability
       'snapshots':   ['VI Snapshots', 'Renders every changed VI (classic HTML snapshots)'],
       'snapshots2':  ['VI Browser 2.0 Snapshots', 'Renders position-aware snapshots for the VI Browser 2.0 view'],
@@ -1911,7 +1911,7 @@
   <script>
   (function(){
     var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
-    var HIST = [{"sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2", "short": "450bd12", "msg": "Initial commit: Game of Life LabVIEW project + MIT license", "dep_only": false, "snapshots2": {"windows": {"have": 0, "total": 10}, "linux": {"have": 0, "total": 10}}}];
+    var HIST = [{"sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2", "short": "450bd12", "msg": "Initial commit: Game of Life LabVIEW project + MIT license", "dep_only": false, "snapshots2": {"windows": {"have": 10, "total": 10}, "linux": {"have": 0, "total": 10}}}];
     var REPO = "RahndelDaVandal/GoL";
     var BRANCH = "main";
     var TOK_KEY = "lvci_dispatch_token";
@@ -2091,12 +2091,12 @@
   </script>
   <main class="lvci-main">
   <h1>CI Dashboard — GoL</h1>
-  <div class="sub">Last updated: 2026-08-25 20:23 UTC &nbsp;|&nbsp; Auto-refreshes every 15 min</div>
+  <div class="sub">Last updated: 2026-08-25 21:23 UTC &nbsp;|&nbsp; Auto-refreshes every 15 min</div>
   <div class="nav">
     <a href="https://github.com/RahndelDaVandal/GoL">GitHub</a>
     <a href="https://github.com/RahndelDaVandal/GoL/actions">Actions</a>
   </div>
-  <div id="lvci-backfill" class="lvci-backfill" role="region" aria-label="Run CI for existing history" style="display:none"><div class="lvci-bf-main"><div class="lvci-bf-icon" aria-hidden="true">&#9889;</div><div class="lvci-bf-text"><strong>Populate the dashboard with your history</strong><span>This dashboard has no results yet. Populate it with CI for all <b id="lvci-bf-count"></b> revisions &mdash; processed <b>oldest&nbsp;&rarr;&nbsp;newest</b> so snapshots and diffs build on one another with no duplicated work. The button opens a <a href="#" id="lvci-bf-custom" style="color:var(--link)">chooser</a> where you pick what to run &mdash; nothing starts until you confirm.</span><span class="lvci-bf-note">Queued runs wait for a free runner and start automatically as earlier ones finish &mdash; nothing is lost &mdash; so it&rsquo;s safe to queue the whole history at once.</span><details class="lvci-bf-info"><summary>&#9432; How concurrency works</summary><div class="lvci-bf-infobody">GitHub caps how many CI jobs run at the same time <b>per account</b> &mdash; shared across every repository you own (for example 20 jobs on Free, 40 on Pro), not per repo &mdash; and queues the rest in the order they were created. A history backfill is paced by that account-wide limit; routine pushes and tooling updates draw from the same pool. If a queued run ever ends without reporting a result (out of Actions minutes, a billing block, or cancelled while waiting), its cell shows a red <b>Failed</b> badge linking to the dead run instead of quietly resetting.</div></details></div><div class="lvci-bf-actions"><button type="button" id="lvci-bf-run" class="cidash-btn cidash-go">&#9654; Populate history&hellip;</button><button type="button" id="lvci-bf-dismiss" class="cidash-btn cidash-ghost">Dismiss</button></div></div><div id="lvci-bf-tok" class="lvci-bf-tok" style="display:none">Paste a token with <strong>Actions: Read and write</strong> on this repository &mdash; the same token you set the dashboard up with works here too, or <a id="lvci-bf-tok-link" target="_blank" rel="noopener" style="color:var(--link)">create one &#8599;</a>.<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:7px"><input id="lvci-bf-tok-input" type="password" autocomplete="off" placeholder="github_pat_&hellip; or ghp_&hellip;" style="flex:1 1 240px;min-width:180px;padding:7px 10px;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:6px;font-family:ui-monospace,Menlo,monospace;font-size:.8em"><button type="button" id="lvci-bf-tok-save" class="cidash-btn cidash-go">Save &amp; run</button></div></div><div id="lvci-bf-status" class="lvci-bf-status" role="status" aria-live="polite"></div></div>
+
   <div class="controls">
     <div class="cidash-search">
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06ZM12 7a5 5 0 1 0-10 0 5 5 0 0 0 10 0Z"/></svg>
@@ -2209,7 +2209,7 @@
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
-      <td style="text-align:center"><a href="#" class="cidash-run" data-cap="builds" data-sha="450bd1296f3677d91c26ef1646a40fab3a3549e2" data-parent="" data-short="450bd12" title="Run Builds for commit 450bd12">&#9655;</a></td>
+      <td style="text-align:center" class="cidash-cap-cell" data-cap="builds" data-sha="450bd1296f3677d91c26ef1646a40fab3a3549e2" data-parent="" data-short="450bd12" data-ts="2026-08-25T21:03:26Z" data-done="false"><span class="run-badge cidash-failed" title="This run ended (failure) before reporting a result — click to see why on GitHub, then re-queue it from Populate history"><a href="https://github.com/RahndelDaVandal/GoL/actions/runs/32898888094" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:5px"><span class="cidash-bang" aria-hidden="true">!</span>Failed</a></span></td>
     </tr></tbody>
   </table>
   </div>
