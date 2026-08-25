@@ -1,0 +1,18 @@
+=== ExecuteBuildSpec 'GoL' [EXE] target 'My Computer' in GoL.lvproj ===
+LabVIEWCLI started logging in file:  C:\Users\ContainerAdministrator\AppData\Local\Temp\lvtemporary_712566.log
+Using LabVIEW: "C:\Program Files\National Instruments\LabVIEW 2026\LabVIEW.exe"
+LabVIEW launched successfully.
+Connection established with LabVIEW at port number 3363.
+
+Operation output: 
+Generated files are:
+C:\builds\GoL\GoL\GoL.exe
+
+C:\builds\GoL\GoL\GoL.aliases
+
+C:\builds\GoL\GoL\GoL.ini
+
+
+ExecuteBuildSpec operation succeeded.
+
+
