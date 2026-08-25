@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "repo": "RahndelDaVandal/GoL",
+  "sha": "3e57cff4bfbe252f19b714e001a5194e276caf16",
+  "revisions": [
+    {
+      "sha": "3e57cff4bfbe252f19b714e001a5194e276caf16",
+      "short": "3e57cff",
+      "message": "Merge pull request #1 from RahndelDaVandal/add-labview-ci",
+      "author": "Connor Sahleen",
+      "date": "2026-08-25T19:50:06Z",
+      "project": false,
+      "dep_only": false
+    },
+    {
+      "sha": "e62b1c685e74ed5b0be3473c26d58b4f09887536",
+      "short": "e62b1c6",
+      "message": "Vendor Windows builds + snapshot-2; pull public NI image (container.use: base)",
+      "author": "Connor Sahleen",
+      "date": "2026-08-25T19:47:24Z",
+      "project": false,
+      "dep_only": false
+    },
+    {
+      "sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2",
+      "short": "450bd12",
+      "message": "Initial commit: Game of Life LabVIEW project + MIT license",
+      "author": "Connor Sahleen",
+      "date": "2026-08-17T14:48:58Z",
+      "project": true,
+      "dep_only": false
+    }
+  ],
+  "config": {
+    "use": "",
+    "actions": {},
+    "vipc": [],
+    "dragon": [],
+    "hasVipcList": false,
+    "hasDragonList": false
+  },
+  "vipc": [],
+  "nipm": [
+    {
+      "name": "LabVIEW",
+      "source": "NI Package Manager",
+      "labview": true,
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "details": "LabVIEW runtime and development packages from the NI feeds."
+    },
+    {
+      "name": "VI Analyzer support",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-viawin-labview-support"
+        ],
+        "linux": [
+          "ni-vialin-labview-support"
+        ]
+      },
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "details": "NI VI Analyzer support package used by the analyzer runners."
+    },
+    {
+      "name": "NI Unit Test Framework",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-utf-labview-support"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "NI UTF support package used by the Windows unit-test runner."
+    },
+    {
+      "name": "JKI Dragon",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "jki-dragon"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "JKI Dragon dependency-management tooling installed from the LabVIEW 2026 NI Package Manager feed."
+    },
+    {
+      "name": "VI Package Manager",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-vipm"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "NI-published Windows VIPM package that enables VIPC application during worker builds. Linux installs VIPM from the native Debian package during its worker build."
+    }
+  ],
+  "dragon": {
+    "available": false,
+    "column": "windows",
+    "ready": false,
+    "health": "",
+    "manifest_version": "",
+    "files": [],
+    "install_set": [],
+    "conflicts": []
+  },
+  "system": [
+    {
+      "name": "VI Browser 2.0 toimages runner",
+      "source": "Repository Go code",
+      "path": ".github/labview/toimages/main.go",
+      "details": "Batch runner compiled from repo Go source; Linux uses the toimages GHCR image and Windows builds runner.exe in the workflow.",
+      "platforms": {
+        "windows": {
+          "present": true,
+          "label": "workflow-built"
+        },
+        "linux": {
+          "present": false,
+          "label": ""
+        }
+      }
+    },
+    {
+      "name": "lvctl render engine",
+      "source": "Repository Go code + embedded VIs",
+      "path": ".github/labview/toimages/_ni/labview/lvctl",
+      "details": "Renderer used by VI Browser 2.0 to drive LabVIEW and emit position-aware frame JSON.",
+      "platforms": {
+        "windows": {
+          "present": true,
+          "label": "workflow-built"
+        },
+        "linux": {
+          "present": false,
+          "label": ""
+        }
+      }
+    }
+  ],
+  "columns": [
+    {
+      "key": "windows",
+      "label": "Windows",
+      "platform": "windows",
+      "defaultTag": "latest",
+      "tag": "latest",
+      "ready": false,
+      "packages": [],
+      "failed_packages": [],
+      "nipkg_ready": false,
+      "nipkg_packages": [],
+      "labview_version": "",
+      "version": "latest"
+    },
+    {
+      "key": "linux",
+      "label": "Linux",
+      "platform": "linux",
+      "defaultTag": "latest",
+      "tag": "latest",
+      "ready": false,
+      "packages": [],
+      "failed_packages": [],
+      "nipkg_ready": false,
+      "nipkg_packages": [],
+      "labview_version": "",
+      "version": "latest"
+    }
+  ]
+}
