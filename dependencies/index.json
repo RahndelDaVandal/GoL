@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "RahndelDaVandal/GoL",
-  "sha": "3e57cff4bfbe252f19b714e001a5194e276caf16",
+  "sha": "d0022be9469a0aa6710aa568f0796dc8edc02fc9",
   "revisions": [
+    {
+      "sha": "d0022be9469a0aa6710aa568f0796dc8edc02fc9",
+      "short": "d0022be",
+      "message": "Fix container.use indent so resolver pulls the public NI image",
+      "author": "Connor Sahleen",
+      "date": "2026-08-25T19:58:39Z",
+      "project": false,
+      "dep_only": false
+    },
     {
       "sha": "3e57cff4bfbe252f19b714e001a5194e276caf16",
       "short": "3e57cff",
@@ -32,7 +41,7 @@
     }
   ],
   "config": {
-    "use": "",
+    "use": "base",
     "actions": {},
     "vipc": [],
     "dragon": [],
@@ -158,28 +167,28 @@
       "label": "Windows",
       "platform": "windows",
       "defaultTag": "latest",
-      "tag": "latest",
-      "ready": false,
+      "tag": "base",
+      "ready": true,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": false,
+      "nipkg_ready": true,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "latest"
+      "version": "base"
     },
     {
       "key": "linux",
       "label": "Linux",
       "platform": "linux",
       "defaultTag": "latest",
-      "tag": "latest",
-      "ready": false,
+      "tag": "base",
+      "ready": true,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": false,
+      "nipkg_ready": true,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "latest"
+      "version": "base"
     }
   ]
 }
