@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "RahndelDaVandal/GoL",
-  "sha": "3c36716d8b6e40427b1e750aa79af38ccc89748f",
+  "sha": "825d70d2fb942eac26a19174e5ab2c55a48896b9",
   "revisions": [
+    {
+      "sha": "825d70d2fb942eac26a19174e5ab2c55a48896b9",
+      "short": "825d70d",
+      "message": "Restore container.use: base clobbered by unit-tests vendor re-run",
+      "author": "Connor Sahleen",
+      "date": "2026-08-31T21:24:28Z",
+      "project": false,
+      "dep_only": false
+    },
     {
       "sha": "3c36716d8b6e40427b1e750aa79af38ccc89748f",
       "short": "3c36716",
@@ -50,7 +59,7 @@
     }
   ],
   "config": {
-    "use": "",
+    "use": "base",
     "actions": {},
     "vipc": [],
     "dragon": [],
@@ -176,28 +185,28 @@
       "label": "Windows",
       "platform": "windows",
       "defaultTag": "latest",
-      "tag": "latest",
-      "ready": false,
+      "tag": "base",
+      "ready": true,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": false,
+      "nipkg_ready": true,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "latest"
+      "version": "base"
     },
     {
       "key": "linux",
       "label": "Linux",
       "platform": "linux",
       "defaultTag": "latest",
-      "tag": "latest",
-      "ready": false,
+      "tag": "base",
+      "ready": true,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": false,
+      "nipkg_ready": true,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "latest"
+      "version": "base"
     }
   ]
 }
