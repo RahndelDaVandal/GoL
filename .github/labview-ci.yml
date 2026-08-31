@@ -11,6 +11,8 @@ config:
   labviewVersion: "2026"
   branch: main
   os: [windows]
+  container:
+    use: base
 activities:
   - builds
   - snapshots-2
