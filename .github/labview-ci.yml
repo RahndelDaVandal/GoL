@@ -2,7 +2,7 @@
 # Records what was installed so the install can be reviewed, re-run, or upgraded.
 schemaVersion: 1
 installedVersion: 4.17.2
-installedAt: 2026-08-25T18:09:35Z
+installedAt: 2026-08-31T21:15:22Z
 provider: github
 source:
   repo: elijah286/LabVIEW-CI-with-Containers
@@ -11,9 +11,14 @@ config:
   labviewVersion: "2026"
   branch: main
   os: [windows]
-  container:
-    use: base
 activities:
   - builds
   - snapshots-2
   - dashboard
+  - unit-tests
+unitTests:
+  tools:
+    caraya:
+      enabled: true
+      locations:
+        - "tests/"
