@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "RahndelDaVandal/GoL",
-  "sha": "d0022be9469a0aa6710aa568f0796dc8edc02fc9",
+  "sha": "3c36716d8b6e40427b1e750aa79af38ccc89748f",
   "revisions": [
+    {
+      "sha": "3c36716d8b6e40427b1e750aa79af38ccc89748f",
+      "short": "3c36716",
+      "message": "Add unit-tests capability: vendor, configure Caraya, tests/ placeholder",
+      "author": "Connor Sahleen",
+      "date": "2026-08-31T21:18:33Z",
+      "project": false,
+      "dep_only": false
+    },
     {
       "sha": "d0022be9469a0aa6710aa568f0796dc8edc02fc9",
       "short": "d0022be",
@@ -41,7 +50,7 @@
     }
   ],
   "config": {
-    "use": "base",
+    "use": "",
     "actions": {},
     "vipc": [],
     "dragon": [],
@@ -167,28 +176,28 @@
       "label": "Windows",
       "platform": "windows",
       "defaultTag": "latest",
-      "tag": "base",
-      "ready": true,
+      "tag": "latest",
+      "ready": false,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": true,
+      "nipkg_ready": false,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "base"
+      "version": "latest"
     },
     {
       "key": "linux",
       "label": "Linux",
       "platform": "linux",
       "defaultTag": "latest",
-      "tag": "base",
-      "ready": true,
+      "tag": "latest",
+      "ready": false,
       "packages": [],
       "failed_packages": [],
-      "nipkg_ready": true,
+      "nipkg_ready": false,
       "nipkg_packages": [],
       "labview_version": "",
-      "version": "base"
+      "version": "latest"
     }
   ]
 }

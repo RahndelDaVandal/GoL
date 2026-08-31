@@ -280,8 +280,8 @@
   </div>
   <script>
   (function(){
-    var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
-    var RT_TIMING = {"snapshots2": {"windows": {"total": 506.0, "work": null}}, "builds": {"windows": {"total": 32.0, "work": null}}};
+    var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "unit-tests": {"label": "Unit Tests", "platforms": {"windows": {"wf": "unit-tests-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
+    var RT_TIMING = {"snapshots2": {"windows": {"total": 506.0, "work": null}}, "unit-tests": {"windows": {"total": null, "work": null}}, "builds": {"windows": {"total": 32.0, "work": null}}};
     var REPO = "RahndelDaVandal/GoL";
     var BRANCH = "main";
     var TOK_KEY = "lvci_dispatch_token";
@@ -1910,7 +1910,7 @@
   </div>
   <script>
   (function(){
-    var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
+    var RT = {"snapshots2": {"label": "VI Browser 2.0 Snapshots", "platforms": {"windows": {"wf": "vi-snapshots-json-windows.yml", "inputs": {"target_sha": "{sha}"}}}}, "unit-tests": {"label": "Unit Tests", "platforms": {"windows": {"wf": "unit-tests-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}, "builds": {"label": "Builds", "platforms": {"windows": {"wf": "build-binaries-windows-container.yml", "inputs": {"commit_sha": "{sha}"}}}}};
     var HIST = [{"sha": "450bd1296f3677d91c26ef1646a40fab3a3549e2", "short": "450bd12", "msg": "Initial commit: Game of Life LabVIEW project + MIT license", "dep_only": false, "snapshots2": {"windows": {"have": 10, "total": 10}, "linux": {"have": 0, "total": 10}}}];
     var REPO = "RahndelDaVandal/GoL";
     var BRANCH = "main";
@@ -2091,7 +2091,7 @@
   </script>
   <main class="lvci-main">
   <h1>CI Dashboard — GoL</h1>
-  <div class="sub">Last updated: 2026-08-31 17:49 UTC &nbsp;|&nbsp; Auto-refreshes every 15 min</div>
+  <div class="sub">Last updated: 2026-08-31 21:19 UTC &nbsp;|&nbsp; Auto-refreshes every 15 min</div>
   <div class="nav">
     <a href="https://github.com/RahndelDaVandal/GoL">GitHub</a>
     <a href="https://github.com/RahndelDaVandal/GoL/actions">Actions</a>
@@ -2136,6 +2136,25 @@
       </tr>
     </thead>
     <tbody>
+    <tr data-project="false" data-deponly="false">
+      <td class="cidash-rev">
+        <div class="cidash-rev-wrap">
+          <span class="cidash-avatar" style="background:hsl(279,42%,45%)" title="Connor Sahleen" aria-hidden="true">C</span>
+          <div class="cidash-rev-body">
+            <div class="cidash-rev-line1"><a href="https://RahndelDaVandal.github.io/GoL/vi-snapshots/index.html?sha=3c36716d8b6e40427b1e750aa79af38ccc89748f" class="cidash-rev-msg" title="Add unit-tests capability: vendor, configure Caraya, tests/ placeholder">Add unit-tests capability: vendor, configure Caraya, tests/ placeholder</a></div>
+            <div class="cidash-rev-meta"><a href="https://RahndelDaVandal.github.io/GoL/vi-snapshots/index.html?sha=3c36716d8b6e40427b1e750aa79af38ccc89748f" class="cidash-rev-sha" title="Browse this revision's VIs in the VI Browser">3c36716</a><span class="cidash-rev-dot">&middot;</span>Connor Sahleen<span class="cidash-rev-dot">&middot;</span>2026-08-31</div>
+          </div>
+        </div>
+      </td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+    </tr>
+
     <tr data-project="false" data-deponly="false">
       <td class="cidash-rev">
         <div class="cidash-rev-wrap">
@@ -2207,7 +2226,7 @@
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
-      <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
+      <td style="text-align:center"><a href="#" class="cidash-run" data-cap="unit-tests" data-sha="450bd1296f3677d91c26ef1646a40fab3a3549e2" data-parent="" data-short="450bd12" title="Run Unit Tests for commit 450bd12">&#9655;</a></td>
       <td style="text-align:center;color:var(--fg-muted);font-size:.75em">—</td>
       <td style="text-align:center"><a href="#" class="cidash-run" data-cap="builds" data-sha="450bd1296f3677d91c26ef1646a40fab3a3549e2" data-parent="" data-short="450bd12" title="Run Builds for commit 450bd12">&#9655;</a></td>
     </tr></tbody>
